@@ -8,7 +8,6 @@ interface Skill {
   items: {
     name: string;
     level: number;
-    color: string;
   }[];
 }
 
@@ -16,26 +15,26 @@ const skills: Skill[] = [
   {
     category: 'Frontend',
     items: [
-      { name: 'React', level: 75, color: '#61DAFB' },
-      { name: 'TypeScript', level: 85, color: '#3178C6' },
-      { name: 'Next.js', level: 60, color: '#000000' },
-      { name: 'Tailwind', level: 90, color: '#38B2AC' },
+      { name: 'React', level: 75 },
+      { name: 'TypeScript', level: 85 },
+      { name: 'Next.js', level: 60 },
+      { name: 'Tailwind', level: 90 },
     ],
   },
   {
     category: 'Backend',
     items: [
-      { name: 'Node.js', level: 80, color: '#339933' },
-      { name: 'NestJS', level: 80, color: '#000000' },
-      { name: 'MySQL', level: 75, color: '#47A248' },
-      { name: 'PostgreSQL', level: 70, color: '#336791' },
+      { name: 'Node.js', level: 80 },
+      { name: 'NestJS', level: 80 },
+      { name: 'MySQL', level: 75 },
+      { name: 'PostgreSQL', level: 70 },
     ],
   },
   {
     category: 'Autres',
     items: [
-      { name: 'Git', level: 75, color: '#F05032' },
-      { name: 'Docker', level: 50, color: '#2496ED' },
+      { name: 'Git', level: 75 },
+      { name: 'Docker', level: 50 },
     ],
   },
 ];
