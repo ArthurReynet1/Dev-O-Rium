@@ -94,7 +94,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-8 text-center"
         >
-          <h2 className="mb-8 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mb-8 text-3xl font-extrabold leading-tight tracking-tighter text-white sm:text-4xl">
             Projets
           </h2>
         </motion.div>
