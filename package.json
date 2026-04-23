@@ -1,7 +1,22 @@
 {
   "name": "dev-o-rium",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Portfolio personnel d'Arthur Reynet — développeur fullstack React / .NET",
+  "author": "Arthur Reynet <arthur.reynet@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArthurReynet1/Dev-O-Rium.git"
+  },
+  "homepage": "https://dev-o-rium.vercel.app",
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
