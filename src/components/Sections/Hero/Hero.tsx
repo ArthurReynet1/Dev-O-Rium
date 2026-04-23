@@ -24,7 +24,7 @@ export default function Hero() {
 
   return (
     <div className="sticky top-0">
-      <div className="relative h-screen overflow-hidden bg-secondary">
+      <div className="relative h-[100dvh] overflow-hidden bg-secondary">
         <canvas ref={canvasRef} className="absolute inset-0" />
         <div className="container relative mx-auto flex h-full flex-col items-center justify-center px-4">
           <motion.div

@@ -57,7 +57,7 @@ export default function Contact() {
   return (
     <section
       id="contact-section"
-      className="bg-secondary flex items-center min-h-screen relative overflow-hidden py-16"
+      className="bg-secondary flex items-center min-h-[100dvh] relative overflow-hidden py-16"
     >
       <CircuitBackground />
       <div className="container mx-auto px-4 relative">

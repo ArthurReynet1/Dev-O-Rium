@@ -37,7 +37,7 @@ export const Navbar = () => {
         <Link href="/" className="hover:opacity-80 transition-opacity">
           <Image
             src="/dev-o-rium-logo-text.svg"
-            alt="logo"
+            alt="Dev-O-Rium — portfolio d'Arthur Reynet"
             width={200}
             height={200}
           />
