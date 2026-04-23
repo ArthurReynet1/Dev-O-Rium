@@ -41,7 +41,7 @@ Portfolio personnel d'Arthur Reynet — développeur fullstack React / .NET.
 
 ## Démarrage
 
-Prérequis : **Node.js ≥ 18.18**.
+Prérequis : **Node.js ≥ 20** (recommandé : 24 via `nvm use`).
 
 ```bash
 # 1. Cloner
