@@ -1,97 +1,148 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import CircuitBackground from '../../ui/CircuitBackground';
+import {
+  BlocksIcon,
+  BracesIcon,
+  Code2Icon,
+  DatabaseIcon,
+  GitBranchIcon,
+  GlobeIcon,
+  HashIcon,
+  HexagonIcon,
+  LayoutIcon,
+  type LucideIcon,
+  PaletteIcon,
+  ServerIcon,
+} from 'lucide-react';
 
 interface Skill {
-  category: string;
-  items: {
-    name: string;
-    level: number;
-  }[];
+  name: string;
+  Icon: LucideIcon;
+  description: string;
 }
 
-const skills: Skill[] = [
-  {
-    category: 'Frontend',
-    items: [
-      { name: 'React', level: 75 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'Next.js', level: 60 },
-      { name: 'Tailwind', level: 90 },
-    ],
-  },
-  {
-    category: 'Backend',
-    items: [
-      { name: 'Node.js', level: 80 },
-      { name: 'NestJS', level: 80 },
-      { name: 'MySQL', level: 75 },
-      { name: 'PostgreSQL', level: 70 },
-    ],
-  },
-  {
-    category: 'Autres',
-    items: [
-      { name: 'Git', level: 75 },
-      { name: 'Docker', level: 50 },
-    ],
-  },
-];
+const skillsByCategory: Record<string, Skill[]> = {
+  Frontend: [
+    {
+      name: 'React',
+      Icon: BlocksIcon,
+      description: 'Component-based UI development',
+    },
+    {
+      name: 'TypeScript',
+      Icon: BracesIcon,
+      description: 'Type-safe JavaScript development',
+    },
+    {
+      name: 'Next.js',
+      Icon: LayoutIcon,
+      description: 'React framework for production',
+    },
+    {
+      name: 'Tailwind',
+      Icon: PaletteIcon,
+      description: 'Utility-first CSS framework',
+    },
+  ],
+  'Backend Node': [
+    {
+      name: 'Node.js',
+      Icon: ServerIcon,
+      description: 'JavaScript runtime environment',
+    },
+    {
+      name: 'NestJS',
+      Icon: Code2Icon,
+      description: 'Progressive Node.js framework',
+    },
+  ],
+  'Backend .NET': [
+    {
+      name: 'C#',
+      Icon: HashIcon,
+      description: 'Strongly-typed OOP language',
+    },
+    {
+      name: '.NET',
+      Icon: HexagonIcon,
+      description: 'Cross-platform app framework',
+    },
+    {
+      name: 'ASP.NET Core',
+      Icon: ServerIcon,
+      description: 'Web & API framework',
+    },
+    {
+      name: 'Entity Framework',
+      Icon: DatabaseIcon,
+      description: 'ORM for .NET',
+    },
+  ],
+  'Bases de données': [
+    {
+      name: 'MySQL',
+      Icon: DatabaseIcon,
+      description: 'Relational database management',
+    },
+    {
+      name: 'PostgreSQL',
+      Icon: DatabaseIcon,
+      description: 'Advanced relational database',
+    },
+  ],
+  Outils: [
+    {
+      name: 'Git',
+      Icon: GitBranchIcon,
+      description: 'Version control system',
+    },
+    {
+      name: 'Docker',
+      Icon: GlobeIcon,
+      description: 'Container platform',
+    },
+  ],
+};
 
 export default function Skills() {
   return (
     <section
       id="skills-section"
-      className="bg-secondary flex items-center h-screen relative overflow-hidden"
+      className="bg-gradient-to-br from-secondaryDark to-secondary py-16 px-4"
     >
-      <CircuitBackground />
-      <div className="container mx-auto px-4 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <h2 className="mb-8 text-3xl font-extrabold leading-tight tracking-tighter text-white sm:text-4xl">
-            Compétences
-          </h2>
-        </motion.div>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="mb-16 text-3xl font-extrabold leading-tight tracking-tighter text-white text-center sm:text-4xl">
+          Compétences
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {skills.map((skillGroup, groupIndex) => (
-            <motion.div
-              key={skillGroup.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: groupIndex * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-tertiary/80 backdrop-blur-sm p-6 rounded-2xl border border-primary/20"
-            >
-              <h3 className="text-xl font-semibold text-white mb-6 text-center">
-                {skillGroup.category}
+        <div className="space-y-12">
+          {Object.entries(skillsByCategory).map(([category, skills]) => (
+            <div key={category} className="space-y-6">
+              <h3 className="text-2xl font-semibold text-white mb-8 border-b border-secondaryDark pb-2">
+                {category}
               </h3>
-              <div className="space-y-6">
-                {skillGroup.items.map((skill, index) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-white">{skill.name}</span>
-                      <span className="text-primary">{skill.level}%</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {skills.map(({ name, Icon, description }) => (
+                  <div
+                    key={name}
+                    className="bg-tertiary/50 backdrop-blur-lg rounded-xl p-6 border border-secondary/50
+                             transform hover:scale-105 transition-all duration-300 hover:border-primary/50
+                             hover:shadow-lg hover:shadow-primary/10 group"
+                  >
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div
+                        className="p-2 rounded-lg bg-secondary/50 group-hover:bg-primary/20
+                                    transition-colors duration-300"
+                      >
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h4 className="text-lg font-medium text-white">{name}</h4>
                     </div>
-                    <div className="h-2 bg-secondary/50 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        className="h-full rounded-full bg-primary"
-                        viewport={{ once: true }}
-                      />
-                    </div>
+                    <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                      {description}
+                    </p>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
