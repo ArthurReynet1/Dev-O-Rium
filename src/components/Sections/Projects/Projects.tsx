@@ -84,7 +84,7 @@ export default function Projects() {
   return (
     <section
       id="projects-section"
-      className="bg-secondaryDark flex items-center h-screen sticky top-0"
+      className="bg-secondaryDark flex items-center min-h-[100dvh] sticky top-0"
     >
       <div className="container mx-auto px-4">
         <motion.div

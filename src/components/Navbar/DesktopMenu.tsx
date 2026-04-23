@@ -1,29 +1,20 @@
-import { Linkedin, Github, FileText } from 'lucide-react';
+import { navLinks } from './links';
 
 export const DesktopMenu = () => {
   return (
     <div className="hidden md:flex items-center space-x-4 gap-6">
-      <a
-        href="#"
-        className="flex items-center gap-2 text-white hover:text-primary transition-colors"
-      >
-        <Linkedin className="w-5 h-5" />
-        <span>LinkedIn</span>
-      </a>
-      <a
-        href="#"
-        className="flex items-center gap-2 text-white hover:text-primary transition-colors"
-      >
-        <Github className="w-5 h-5" />
-        <span>GitHub</span>
-      </a>
-      <a
-        href="#"
-        className="flex items-center gap-2 text-white hover:text-primary transition-colors"
-      >
-        <FileText className="w-5 h-5" />
-        <span>CV</span>
-      </a>
+      {navLinks.map(({ label, href, icon: Icon, external }) => (
+        <a
+          key={label}
+          href={href}
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noopener noreferrer' : undefined}
+          className="flex items-center gap-2 text-white hover:text-primary transition-colors"
+        >
+          <Icon className="w-5 h-5" />
+          <span>{label}</span>
+        </a>
+      ))}
     </div>
   );
 };
