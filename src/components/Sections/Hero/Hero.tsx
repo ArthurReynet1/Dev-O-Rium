@@ -16,9 +16,9 @@ export default function Hero() {
     enabled: !prefersReducedMotion,
   });
 
-  const scrollToProjects = () => {
+  const scrollToSkills = () => {
     document
-      .getElementById('projects-section')
+      .getElementById('skills-section')
       ?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -42,10 +42,10 @@ export default function Hero() {
               Dev-O-Rium !
             </p>
             <Button
-              onClick={scrollToProjects}
+              onClick={scrollToSkills}
               className="group bg-primary text-secondary hover:bg-primary/90 px-6 py-3 text-base font-medium rounded-md transition-colors duration-200 flex items-center justify-center"
             >
-              Voir mon travail
+              Découvrir mes compétences
               <ChevronRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>
