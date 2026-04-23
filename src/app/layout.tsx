@@ -35,10 +35,8 @@ export const metadata: Metadata = {
     url: 'https://dev-o-rium.vercel.app',
     title: 'Arthur Reynet — Dev-O-Rium',
     description: 'Portfolio fullstack React / .NET.',
-    images: ['/og-image.png'],
   },
   twitter: { card: 'summary_large_image' },
-  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
 };
 
 export default function RootLayout({

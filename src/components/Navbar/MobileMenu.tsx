@@ -18,7 +18,7 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
         </a>
         <a
           href="#"
-          className="flex items-center gap-2 hover:text-primary hover:bg transition-colors"
+          className="flex items-center gap-2 hover:text-primary transition-colors"
           onClick={toggleMenu}
         >
           <Github className="w-5 h-5" />
